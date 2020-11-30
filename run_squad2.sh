@@ -1,6 +1,7 @@
 #!/bin/sh
+conda activate transformers
 
-export SQUAD_DIR=./squad
+export SQUAD_DIR=./squad/squad2
 
 python run_squad.py \
     --model_type distilbert \
@@ -8,8 +9,8 @@ python run_squad.py \
     --do_train \
     --do_eval \
     --version_2_with_negative \
-    --train_file $SQUAD_DIR/train-v2.0.json \
-    --predict_file $SQUAD_DIR/dev-v2.0.json \
+    --train_file ${SQUAD_DIR}/train-v2.0.json \
+    --predict_file ${SQUAD_DIR}/dev-v2.0.json \
     --learning_rate 3e-5 \
     --num_train_epochs 1 \
     --max_seq_length 384 \
