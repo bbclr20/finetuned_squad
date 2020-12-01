@@ -1,7 +1,7 @@
 #!/bin/sh
 conda activate transformers
 
-export SQUAD_DIR=./squad/squad2
+export SQUAD_DIR=../squad/squad2
 
 python run_squad.py \
     --model_type distilbert \
